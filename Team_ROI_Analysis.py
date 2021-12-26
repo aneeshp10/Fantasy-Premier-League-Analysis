@@ -24,41 +24,111 @@ team_ids = [i + 1 for i in range(20)]
 
 
 for i in range(1, len(players)):
-    if players[i]['team'] == ars_id:
+    if players[i]['team'] == 1:
         player_points["Arsenal"] += players[i]['total_points']
         player_cost["Arsenal"] += round(float(players[i]['now_cost']) / 10, 2)
     
-    elif players[i]['team'] == city_id:
+    
+    elif players[i]['team'] == 2:
+        player_points["Aston Villa"] += players[i]['total_points']
+        player_cost["Aston Villa"] += round(float(players[i]['now_cost']) / 10, 2)
+        
+        
+    elif players[i]['team'] == 3:
+        player_points["Brentford"] += players[i]['total_points']
+        player_cost["Brentford"] += round(float(players[i]['now_cost']) / 10, 2)
+    
+    
+    
+    elif players[i]['team'] == 4:
+        player_points["Brighton"] += players[i]['total_points']
+        player_cost["Brighton"] += round(float(players[i]['now_cost']) / 10, 2)
+    
+    
+    elif players[i]['team'] == 5:
+        player_points["Brentford"] += players[i]['total_points']
+        player_cost["Brentford"] += round(float(players[i]['now_cost']) / 10, 2)
+        
+    
+    elif players[i]['team'] == 6:
+        player_points["Chelsea"] += players[i]['total_points']
+        player_cost["Chelsea"] += float(players[i]['now_cost']) / 10
+    
+    
+    elif players[i]['team'] == 7:
+        player_points["Crystal Palace"] += players[i]['total_points']
+        player_cost["Crystal Palace"] += round(float(players[i]['now_cost']) / 10, 2)
+    
+    
+    elif players[i]['team'] == 8:
+        player_points["Everton"] += players[i]['total_points']
+        player_cost["Everton"] += round(float(players[i]['now_cost']) / 10, 2)
+    
+    
+    
+    elif players[i]['team'] == 9:
+        player_points["Leicester"] += players[i]['total_points']
+        player_cost["Leicester"] += round(float(players[i]['now_cost']) / 10, 2)
+    
+    
+    
+    elif players[i]['team'] == 10:
+        player_points["Leeds"] += players[i]['total_points']
+        player_cost["Leeds"] += round(float(players[i]['now_cost']) / 10, 2)
+        
+    
+    
+    elif players[i]['team'] == 11:
+        player_points["Liverpool"] += players[i]['total_points']
+        player_cost["Liverpool"] += round(float(players[i]['now_cost']) / 10, 2)
+    
+    
+    
+    elif players[i]['team'] == 12:
         player_points["Man City"] += players[i]['total_points']
         player_cost["Man City"] += round(float(players[i]['now_cost']) / 10, 2)
     
-    elif players[i]['team'] == city_id:
-        player_points["Man City"] += players[i]['total_points']
-        player_cost["Man City"] += round(float(players[i]['now_cost']) / 10, 2)
+    
+    
+    elif players[i]['team'] == 13:
+        player_points["Man Utd"] += players[i]['total_points']
+        player_cost["Man Utd"] += round(float(players[i]['now_cost']) / 10, 2)
         
-    elif players[i]['team'] == liv_id:
-        player_points["Liverpool"] += players[i]['total_points']
-        player_cost["Liverpool"] += round(float(players[i]['now_cost']) / 10, 2)
+    
+    
+    elif players[i]['team'] == 14:
+        player_points["Newcastle"] += players[i]['total_points']
+        player_cost["Newcastle"] += round(float(players[i]['now_cost']) / 10, 2)
+    
+    
+    elif players[i]['team'] == 15:
+        player_points["Norwich"] += players[i]['total_points']
+        player_cost["Norwich"] += round(float(players[i]['now_cost']) / 10, 2)
         
-    elif players[i]['team'] == che_id:
-        player_points["Chelsea"] += players[i]['total_points']
-        player_cost["Chelsea"] += float(players[i]['now_cost']) / 10
-#print(player_points)
-#print(player_cost)
+        
+    elif players[i]['team'] == 16:
+        player_points["Southampton"] += players[i]['total_points']
+        player_cost["Southampton"] += round(float(players[i]['now_cost']) / 10, 2)
+    
+    
+    elif players[i]['team'] == 17:
+        player_points["Spurs"] += players[i]['total_points']
+        player_cost["Spurs"] += round(float(players[i]['now_cost']) / 10, 2)
+        
+        
+    elif players[i]['team'] == 18:
+        player_points["Watford"] += players[i]['total_points']
+        player_cost["Watford"] += round(float(players[i]['now_cost']) / 10, 2)
+        
+        
+    elif players[i]['team'] == 19:
+        player_points["West Ham"] += players[i]['total_points']
+        player_cost["West Ham"] += round(float(players[i]['now_cost']) / 10, 2)
+    
+    elif players[i]['team'] == 20:
+        player_points["Wolves"] += players[i]['total_points']
+        player_cost["Wolves"] += round(float(players[i]['now_cost']) / 10, 2)
+        
+ 
 
-# plotting
-xAxis = np.arange(4)
-
-
-f = plt.figure()
-f.set_figwidth(10)
-f.set_figheight(7)
-p_list = player_points.values()
-c_list = player_cost.values()
-
-plt.bar(xAxis, p_list, color='pink', width=0.2, label='Points')
-plt.bar(xAxis + 0.2, c_list, color='violet', width=0.2, label='Cost')
-plt.xticks(xAxis + 0.2/2, player_points.keys())
-plt.xlabel('Club')
-plt.ylabel('Points and Cost')
-plt.legend()
+print(player_points)
