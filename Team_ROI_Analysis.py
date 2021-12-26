@@ -46,8 +46,8 @@ for i in range(1, len(players)):
     
     
     elif players[i]['team'] == 5:
-        player_points["Brentford"] += players[i]['total_points']
-        player_cost["Brentford"] += round(float(players[i]['now_cost']) / 10, 2)
+        player_points["Burnley"] += players[i]['total_points']
+        player_cost["Burnley"] += round(float(players[i]['now_cost']) / 10, 2)
         
     
     elif players[i]['team'] == 6:
@@ -129,6 +129,20 @@ for i in range(1, len(players)):
         player_points["Wolves"] += players[i]['total_points']
         player_cost["Wolves"] += round(float(players[i]['now_cost']) / 10, 2)
         
- 
 
-print(player_points)
+
+xAxis = np.arange(20)
+
+
+f = plt.figure()
+f.set_figwidth(25)
+f.set_figheight(7)
+p_list = player_points.values()
+c_list = player_cost.values()
+
+plt.bar(xAxis, p_list, color='pink', width=0.2, label='Points')
+plt.bar(xAxis + 0.2, c_list, color='violet', width=0.2, label='Cost')
+plt.xticks(xAxis + 0.2/2, player_points.keys())
+plt.xlabel('Club')
+plt.ylabel('Points and Cost')
+plt.legend()
