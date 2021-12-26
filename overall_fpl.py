@@ -32,8 +32,11 @@ tmp_elements_dataframe = tmp_elements_dataframe.loc[tmp_elements_dataframe.playe
 position_pivot = tmp_elements_dataframe.pivot_table(index='position', values='player_value',aggfunc=np.mean).reset_index()
 position_pivot.sort_values('player_value', ascending=False)
 
+# pivot table based on the teams
 team_pivot = tmp_elements_dataframe.pivot_table(index='team', values='player_value',aggfunc=np.mean).reset_index()
 team_pivot.sort_values('player_value', ascending=False)
+
+tmp_elements_dataframe.sort_values('total_points', ascending=False).head(20)
 
 #tmp_elements_dataframe.head(50)
 
