@@ -1,6 +1,7 @@
 import requests
 import pandas as pd
 import numpy as np
+import matplotlib
 
 req = requests.get('https://fantasy.premierleague.com/api/bootstrap-static/')
 json_resp = req.json()
@@ -24,7 +25,8 @@ tmp_elements_dataframe['team'] = tmp_elements_dataframe.team.map(teams_dataframe
 # create new values column
 tmp_elements_dataframe['player_value'] = tmp_elements_dataframe.value_season.astype(float)
 tmp_elements_dataframe = tmp_elements_dataframe.sort_values('player_value', ascending=False)
-tmp_elements_dataframe = tmp_elements_dataframe.loc[tmp_elements_dataframe.player_value > 0]
+
+tmp_elements_dataframe = tmp_elements_dataframe.loc[tmp_elements_dataframe.player_value > 0] # take out players who arent playing
 
 # pivot table based on positions
 position_pivot = tmp_elements_dataframe.pivot_table(index='position', values='player_value',aggfunc=np.mean).reset_index()
